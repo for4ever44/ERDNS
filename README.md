@@ -10,8 +10,8 @@
 
 
 ## Usage
-python train.py --task_dir=./KG_Data/WN18RR --model=TransE  --margin=8 --bern=1 --out_file=_test --topk=1000 --gpu=1 --N_1=50 --N=100 --hidden_dim=200 --lr=0.0001 --n_epoch=1000 --n_batch=1024 --filter=True --epoch_per_test=100 --test_batch_size=20 --optim=adam;
-python train.py --task_dir=./KG_Data/FB15K237 --model=DistMult  --margin=0 --bern=1 --out_file=_test --topk=1000 --gpu=1 --N_1=50 --N=100 --hidden_dim=200 --lr=0.0001 --n_epoch=1000 --n_batch=1024 --filter=True --epoch_per_test=100 --test_batch_size=20 --optim=adam;
+
+bash run.sh train TransE YAGO3-10 1 1 1024 1024 500 24.0 1.0 0.0002 200000 4 -s 0.5
 
 
 ## Data
