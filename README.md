@@ -12,9 +12,28 @@
 ## Usage
 
 To run conventional models and ConvE model.
-bash run.sh train TransE YAGO3-10 1 1 1024 1024 500 24.0 1.0 0.0002 200000 4 -s 0.5
+
+bash run.sh train TransE FB15k-237 0 0 1024 256 1000 9.0 1.0 0.00005 100000 16 -s 0.5
+bash run.sh train TransE wn18rr 0 0 512 512 500 6.0 0.5 0.00005 80000 8 -s 1
+bash run.sh train TransE YAGO3-10 0 0 1024 1024 500 6.0 0.5 0.0002 200000 8 -s 1
+
+bash run.sh train RotatE FB15k-237 0 0 1024 256 1000 9.0 1.0 0.00005 100000 16 -de -s 0.5
+bash run.sh train RotatE wn18rr 0 0 512 128 500 6.0 0.5 0.00005 80000 8 -de -s 1
+bash run.sh train RotatE YAGO3-10 0 0 1024 1024 500 6.0 0.5 0.0002 200000 8 -de -s 1
+
+bash run.sh train DistMult FB15k-237 0 0 1024 256 2000 200.0 1.0 0.001 100000 16 -r 0.00001 -s 1
+bash run.sh train DistMult wn18rr 0 0 512 50 1000 200.0 1.0 0.002 80000 8 -r 0.000005 -s 1
+bash run.sh train DistMult YAGO3-10 0 0 1024 512 1000 200.0 1.0 0.001 200000 8 -r 0.000002 -s 1
+
+bash run.sh train ComplEx FB15k-237 0 0 1024 256 1000 200.0 1.0 0.001 100000 16 -de -dr -r 0.00001 -s 1
+bash run.sh train ComplEx wn18rr 0 0 512 126 500 200.0 1.0 0.002 80000 8 -de -dr -r 0.000005 -s 1
+bash run.sh train ComplEx YAGO3-10 0 0 1024 512 500 200.0 1.0 0.001 200000 8 -de -dr -r 0.000002 -s 1
 
 To run CompGCN model.
+Go into OurCompGCN
+python run.py -score_func transe -opn mult -gamma 9 -hid_drop 0.2 -init_dim 200
+python run.py -score_func distmult -opn mult -gcn_dim 150 -gcn_layer 2 
+python run.py -score_func conve -opn mult
 
 ## Data
 We provide three datasets: FB15K237, WN18RR and YAGO3-10.
