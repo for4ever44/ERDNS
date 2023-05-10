@@ -37,12 +37,14 @@ To run CompGCN model.
 
 Go into OurCompGCN
 
-python run.py -score_func transe -opn mult -gamma 9 -hid_drop 0.2 -init_dim 200 -data WN18RR -square 1 -N_sample 4096 -batch 512
-python run.py -score_func transe -opn mult -gamma 9 -hid_drop 0.2 -init_dim 200 -data WN18RR -square 1 -N_sample 4096 -batch 1024
+python run.py -score_func transe -opn mult -gamma 9 -hid_drop 0.2 -init_dim 200 -data WN18RR -square 1 -N_sample 1024 -batch 512
+python run.py -score_func transe -opn mult -gamma 9 -hid_drop 0.2 -init_dim 200 -data FB15k-237 -square 1 -N_sample 4096 -batch 1024
 
-python run.py -score_func distmult -opn mult -gcn_dim 150 -gcn_layer 2 -square 1  -N_sample 8192 -batch 512
-python run.py -score_func conve -opn mult -square 1  -N_sample 8192 -batch 512
+python run.py -score_func distmult -opn mult -gcn_dim 150 -gcn_layer 2 -data WN18RR -square 1 -N_sample 8192 -batch 512
+python run.py -score_func distmult -opn mult -gcn_dim 150 -gcn_layer 2 -data FB15k-237 -square 1 -N_sample 4096 -batch 1024
 
+python run.py -score_func conve -opn mult -square 1 -data WN18RR -square 1 -N_sample 4096 -batch 512
+python run.py -score_func conve -opn mult -square 1 -data WN18RR -square 1 -N_sample 4096 -batch 1024
 
 ## Data
 We provide three datasets: FB15K237, WN18RR and YAGO3-10.
